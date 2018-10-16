@@ -5,12 +5,25 @@ class BinaryNumber:
                 raise BaseException("Invalid binary number")
         self.number = number
 
-    def add(self, binaryNumber):
-        if binaryNumber is None:
-            return self
-        i1 = len(self.number)-1
-        i2 = len(binaryNumber)-1
-        carry=0
-        while i1 >= 0 or i2 >= 0:
+    def addBinary(self, A, B):
+        small = B if len(A) > len(B) else A
+        large = B if small is A else A
+        small += "0" * (len(large) - len(small)) + small
+        carry = 0
+        result = ""
+        s = len(small) - 1
+        l = len(large) - 1
+        while l >= 0 and s >= 0:
+            binsum = int(small[s]) + int(large[l]) + int(carry)
+            sum = binsum % 2
+            result = str(sum) + result
+            carry = binsum // 2
+            s -= 1
+            l -= 1
+
+        if carry > 0:
+            result = str(carry) + result
+
+        return result
 
 
