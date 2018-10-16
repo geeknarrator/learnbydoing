@@ -32,16 +32,13 @@ class LinkedListNode:
     def reversePart(self, i, j):
         # i and j are indices
         # within list range.
-        if i not in (0, len(self)) or j not in (0, len(self)):
-            return self
-        prev = self
-        count = 0
-
-
+        pass
 
     def sort(self):
         # sorts the list
         pass
+
+
 
 
 head = LinkedListNode(3, LinkedListNode(4, LinkedListNode(5, LinkedListNode(6, None))))
